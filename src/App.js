@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MovieBuzzResultBase from "./componets/MovieBuzzResultBase";
+import MovieView from "./componets/MovieView";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div className="movie-buzz">
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<MovieBuzzResultBase />}></Route>
+                    <Route path='/:id/display' element={<MovieView />}></Route>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
-
-export default App;
