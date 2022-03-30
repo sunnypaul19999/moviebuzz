@@ -24,7 +24,7 @@ export default function MovieCard(props) {
 
     let onClick = () => {
         nav({
-            pathname: `/${props.id}/display`,
+            pathname: `/${props.id}`,
         }, { state: { ...props } });
     }
     return (
